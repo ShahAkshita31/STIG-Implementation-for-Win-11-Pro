@@ -82,15 +82,8 @@ The following workflow outlines the process of deploying the environment, identi
 ---
 ## 📊 Baseline Scan Results
 
-Initial vulnerability scans identified multiple Windows 11 security misconfigurations related to:
-- Authentication security
-- Remote management hardening
-- PowerShell visibility and logging
-- Legacy protocol exposure
-- Account security policies
-- Network security configurations
+<img width="1377" height="777" alt="image" src="https://github.com/user-attachments/assets/a973bad9-288f-46f1-b2b3-70c3b5f9edbe" />
 
-Post-remediation scans demonstrated improved compliance posture and reduced high-severity findings.
 
 ---
 ## 🛡️ Targeted STIG Controls for Remediation
