@@ -9,7 +9,6 @@
 - **Security Focus Areas:** System Hardening, Authentication Security, Secure Remote Management, Audit Logging
 
 ---
-
 ## 📖 Project Overview
 
 ### What is DISA STIG?
@@ -18,7 +17,6 @@ The **Security Technical Implementation Guides (STIGs)** are cybersecurity harde
 These guidelines establish secure configuration baselines designed to reduce attack surface, strengthen system security, and improve enterprise compliance posture.
 
 ---
-
 ### Why is STIG Compliance Important?
 
 Implementing STIG controls helps organizations:
@@ -29,7 +27,6 @@ Implementing STIG controls helps organizations:
 - Align systems with enterprise security standards and compliance requirements
 
 ---
-
 ### Impact of Non-Compliance
 
 - **Remote Exploitation Risks:** Insecure remote management configurations may allow unauthorized access.
@@ -38,26 +35,21 @@ Implementing STIG controls helps organizations:
 - **Operational Risk:** Unhardened systems are more susceptible to malware, ransomware, and lateral movement attacks.
 
 ---
-
 ## 🚀 Workflow: Scanning & Remediation
 
 The following workflow outlines the process of deploying the environment, identifying failed STIG controls, automating remediation, and validating compliance improvements.
 
 ---
-
 ### Phase 1: Environment Setup & Configuration
 
-1. **Deploy Virtual Machine:**  
-  Log in to the [Azure Portal](https://portal.azure.com) and provision a new Windows 11 Pro VM.
+1. **Deploy Virtual Machine:** Log in to the [Azure Portal](https://portal.azure.com) and provision a new Windows 11 Pro VM.
 
-2. **Network Configuration:**  
-   Validate communication between the scanner and target VM by:
+2. **Network Configuration:** Validate communication between the scanner and target VM by:
    - confirming IP connectivity
    - enabling required management services
    - verifying SMB and WinRM accessibility
 
 ---
-
 ### Phase 2: Vulnerability Assessment (Nessus / Tenable)
 
 1. Log in to [Tenable.io](https://cloud.tenable.com).
@@ -70,35 +62,27 @@ The following workflow outlines the process of deploying the environment, identi
 4. **Configure Compliance Policy**
    - Navigate to the **Compliance** section
    - Select:
-     - ** DISA Windows 11 STIG v2r7 **
+     - **DISA Windows 11 STIG v2r7**
 5. **Optimization (Optional)**
    - Disable unnecessary plugins
    - Enable only:
      - Windows Compliance Checks under Policy Compliance
      - Settings, General and Windows
-
 6. **Execute the Scan**
    Launch the scan to identify failed STIG controls and generate the initial compliance baseline.
 
 ---
-
 ### Phase 3: Analysis & Remediation
 
-1. **Review Findings:**  
-   Analyze failed STIG controls and prioritize remediation based on severity.
-2. **PowerShell Automation:**  
-   Develop and execute PowerShell remediation scripts to enforce secure configurations automatically.
-3. **Validation:**  
-   Verify registry modifications, policy configurations, and service hardening after remediation.
-4. **Compliance Verification:**  
-   Re-run authenticated vulnerability scans to validate successful remediation and confirm compliance improvements.
+1. **Review Findings:** Analyze failed STIG controls and prioritize remediation based on severity.
+2. **PowerShell Automation:** Develop and execute PowerShell remediation scripts to enforce secure configurations automatically.
+3. **Validation:** Verify registry modifications, policy configurations, and service hardening after remediation.
+4. **Compliance Verification:** Re-run authenticated vulnerability scans to validate successful remediation and confirm compliance improvements.
 
 ---
-
 ## 📊 Baseline Scan Results
 
 Initial vulnerability scans identified multiple Windows 11 security misconfigurations related to:
-
 - Authentication security
 - Remote management hardening
 - PowerShell visibility and logging
@@ -109,7 +93,6 @@ Initial vulnerability scans identified multiple Windows 11 security misconfigura
 Post-remediation scans demonstrated improved compliance posture and reduced high-severity findings.
 
 ---
-
 ## 🛡️ Targeted STIG Controls for Remediation
 
 The following STIG controls were selected for automated remediation and compliance validation using PowerShell scripting.
