@@ -92,16 +92,16 @@ The following STIG controls were selected for automated remediation and complian
 
 | STIG ID | Title | Severity | Security Context & Justification |
 | :------ | :--- | :--- | :--- |
-| **WN11-SO-000025** | Account lockout threshold must be configured | High | Mitigates brute-force password attacks targeting local accounts. |
-| **WN11-CC-000030** | LAN Manager hash storage must be disabled | High | Prevents insecure legacy password hashes from being stored, reducing offline credential cracking risks. |
-| **WN11-CC-000050** | Anonymous SID enumeration must be restricted | High | Limits attacker reconnaissance techniques used to enumerate users and security identifiers. |
-| **WN11-SO-000070** | Interactive logon message title must be configured | Low | Supports enterprise security notification and compliance policy requirements. |
-| **WN11-CC-000090** | Solicited Remote Assistance must be disabled | Medium | Reduces unauthorized remote assistance access and remote exploitation opportunities. |
-| **WN11-CC-000185** | Local accounts with blank passwords must be restricted | High | Prevents weak local authentication configurations vulnerable to unauthorized access. |
-| **WN11-CC-000200** | Windows Defender SmartScreen must be enabled | High | Protects against phishing attacks, malicious downloads, and untrusted application execution. |
-| **WN11-SO-000270** | RDP client must not save passwords | Medium | Stops attackers from harvesting stored RDP credentials after breaching a machine. |
-| **WN11-CC-000315** | PowerShell Module Logging must be enabled | High | Enhances visibility into PowerShell execution activity for threat detection and forensic analysis. |
-| **WN11-CC-000350** | WinRM service must not allow unencrypted traffic | Medium | Blocks attackers from intercepting or tampering with WinRM remote management sessions. |
+| **WN11-SO-000025** | The built-in Guest account must be renamed | Medium | Prevents attackers from targeting the well-known Guest account for enumeration and password attacks. |
+| **WN11-CC-000030** | ICMP redirects must be ignored | Medium | Prevents malicious network routing manipulation and man-in-the-middle attacks using forged ICMP redirect messages. |
+| **WN11-CC-000050** | Hardened UNC paths must be configured for SYSVOL and NETLOGON | High | Ensures secure access to domain resources using mutual authentication and integrity protection over SMB. |
+| **WN11-SO-000070** | The built-in Administrator account must be renamed | Medium | Reduces targeted brute-force and credential guessing attacks against a well-known privileged account. |
+| **WN11-CC-000090** | Group Policy objects must be reprocessed even if not changed | Medium | Ensures consistent enforcement of security policies and prevents policy drift or bypass conditions. |
+| **WN11-CC-000185** | AutoPlay must be disabled for all drives | Medium | Prevents automatic execution of malicious code from removable media and external devices. |
+| **WN11-CC-000200** | User Account Control (UAC) must be enabled in Admin Approval Mode | High | Ensures privilege escalation is controlled and prevents silent elevation of administrative rights. |
+| **WN11-SO-000270** | User Account Control must require secure elevation behavior (Admin Approval Mode enforcement) | Medium | Prevents credential leakage and enforces secure interactive privilege elevation. |
+| **WN11-CC-000315** | AlwaysInstallElevated must be disabled for Windows Installer | High | Prevents MSI-based privilege escalation by blocking automatic elevated installations. |
+| **WN11-CC-000350** | WinRM must not allow unencrypted traffic | Medium | Prevents interception and tampering of remote management traffic by enforcing encryption. |
 
 
 
