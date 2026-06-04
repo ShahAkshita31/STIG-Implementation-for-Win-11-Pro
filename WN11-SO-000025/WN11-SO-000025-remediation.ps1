@@ -26,3 +26,47 @@
     PS C:\> .\WN11-SO-000025-remediation.ps1
 #>
 # Define the Registry path and value details
+$guestAccountName = "Guest"
+$newGuestName = "Guest_Disabled"
+
+Write-Host "------------------------------------------------------------" -ForegroundColor Cyan
+Write-Host "Starting Remediation for STIG ID: WN11-SO-000025" -ForegroundColor Cyan
+Write-Host "Goal: Rename Built-in Guest Account" -ForegroundColor Gray
+Write-Host "------------------------------------------------------------" -ForegroundColor Cyan
+
+try {
+    # Find the built-in Guest account using its SID ending in -501
+    $guestAccount = Get-LocalUser | Where-Object {
+        $_.SID.Value -match "-501$"
+    }
+
+    if (-not $guestAccount) {
+        Write-Host "[ERROR] Built-in Guest account not found." -ForegroundColor Red
+        exit
+    }
+
+    $currentName = $guestAccount.Name
+
+    if ($currentName -ne $guestAccountName) {
+        Write-Host "[OK] Guest account is already renamed to '$currentName'." -ForegroundColor Green
+    }
+    else {
+        Write-Host "[INFO] Renaming Guest account to '$newGuestName'." -ForegroundColor Yellow
+
+        Rename-LocalUser -Name $currentName -NewName $newGuestName -ErrorAction Stop
+
+        $verifyAccount = Get-LocalUser -Name $newGuestName -ErrorAction SilentlyContinue
+
+        if ($verifyAccount) {
+            Write-Host "[SUCCESS] Guest account renamed successfully." -ForegroundColor Green
+        }
+        else {
+            Write-Host "[ERROR] Failed to verify account rename." -ForegroundColor Red
+        }
+    }
+}
+catch {
+    Write-Host "[ERROR] An unexpected error occurred: $_" -ForegroundColor Red
+}
+
+Write-Host "------------------------------------------------------------" -ForegroundColor Cyan
