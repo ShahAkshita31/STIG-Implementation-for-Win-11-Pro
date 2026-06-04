@@ -31,52 +31,25 @@ $regPath = "HKLM:\SYSTEM\CurrentControlSet\Services\Tcpip\Parameters"
 $regName = "DisableIPSourceRouting"
 $desiredValue = 2
 
-Write-Host "------------------------------------------------------------" -ForegroundColor Cyan
-Write-Host "Starting Remediation for STIG ID: WN11-CC-000025" -ForegroundColor Cyan
-Write-Host "Goal: Disable IP Source Routing (Prevent Packet Spoofing)" -ForegroundColor Gray
-Write-Host "------------------------------------------------------------" -ForegroundColor Cyan
+Write-Host "Starting Remediation for STIG ID: WN11-CC-000025"
 
 try {
-
-    # Check whether registry path exists
     if (-not (Test-Path $regPath)) {
-        Write-Host "[INFO] Registry path not found. Creating path: $regPath" -ForegroundColor Yellow
         New-Item -Path $regPath -Force | Out-Null
     }
 
-    # Read current value
     $currentValue = (Get-ItemProperty -Path $regPath -Name $regName -ErrorAction SilentlyContinue).$regName
 
-    # Check compliance
-    if ($currentValue -eq $desiredValue) {
-        Write-Host "[OK] System is already compliant. '$regName' is set to $desiredValue." -ForegroundColor Green
+    if ($currentValue -ne $desiredValue) {
+        New-ItemProperty -Path $regPath -Name $regName -Value $desiredValue -PropertyType DWord -Force | Out-Null
+        Write-Host "Remediated successfully"
     }
     else {
-
-        # Apply remediation
-        Write-Host "[INFO] Remediating... Setting '$regName' to $desiredValue." -ForegroundColor Yellow
-
-        New-ItemProperty `
-            -Path $regPath `
-            -Name $regName `
-            -Value $desiredValue `
-            -PropertyType DWord `
-            -Force `
-            -ErrorAction Stop | Out-Null
-
-        # Verify remediation
-        $newValue = (Get-ItemProperty -Path $regPath -Name $regName).$regName
-
-        if ($newValue -eq $desiredValue) {
-            Write-Host "[SUCCESS] Remediation applied successfully." -ForegroundColor Green
-        }
-        else {
-            Write-Host "[ERROR] Failed to verify registry change." -ForegroundColor Red
-        }
+        Write-Host "Already compliant"
     }
 }
 catch {
-    Write-Host "[ERROR] An unexpected error occurred: $_" -ForegroundColor Red
+    Write-Host "Error: $_"
 }
 
 Write-Host "------------------------------------------------------------" -ForegroundColor Cyan
