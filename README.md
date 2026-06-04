@@ -91,7 +91,7 @@ The following workflow outlines the process of deploying the environment, identi
 The following STIG controls were selected for automated remediation and compliance validation using PowerShell scripting.
 
 | STIG ID | Title | Severity | Security Context & Justification |
-| :--- | :--- | :--- | :--- |
+| :------ | :--- | :--- | :--- |
 | **WN11-SO-000025** | Account lockout threshold must be configured | High | Mitigates brute-force password attacks targeting local accounts. |
 | **WN11-CC-000030** | LAN Manager hash storage must be disabled | High | Prevents insecure legacy password hashes from being stored, reducing offline credential cracking risks. |
 | **WN11-CC-000050** | Anonymous SID enumeration must be restricted | High | Limits attacker reconnaissance techniques used to enumerate users and security identifiers. |
