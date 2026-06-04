@@ -80,5 +80,4 @@ catch {
 }
 
 Write-Host "------------------------------------------------------------" -ForegroundColor Cyan
-<img width="912" height="1859" alt="image" src="https://github.com/user-attachments/assets/3a5b058c-e969-41df-8044-1b7fa846c627" />
 
