@@ -92,16 +92,16 @@ The following STIG controls were selected for automated remediation and complian
 
 | STIG ID | Title | Severity | Security Context & Justification |
 | :------ | :--- | :--- | :--- |
-| **WN11-SO-000025** | The built-in Guest account must be renamed | Medium | Prevents attackers from targeting the well-known Guest account for enumeration and password attacks. |
-| **WN11-CC-000030** | ICMP redirects must be ignored | Medium | Prevents malicious network routing manipulation and man-in-the-middle attacks using forged ICMP redirect messages. |
-| **WN11-CC-000050** | Hardened UNC paths must be configured for SYSVOL and NETLOGON | High | Ensures secure access to domain resources using mutual authentication and integrity protection over SMB. |
-| **WN11-SO-000070** | The built-in Administrator account must be renamed | Medium | Reduces targeted brute-force and credential guessing attacks against a well-known privileged account. |
-| **WN11-CC-000090** | Group Policy objects must be reprocessed even if not changed | Medium | Ensures consistent enforcement of security policies and prevents policy drift or bypass conditions. |
-| **WN11-CC-000185** | AutoPlay must be disabled for all drives | Medium | Prevents automatic execution of malicious code from removable media and external devices. |
-| **WN11-CC-000200** | User Account Control (UAC) must be enabled in Admin Approval Mode | High | Ensures privilege escalation is controlled and prevents silent elevation of administrative rights. |
-| **WN11-SO-000270** | User Account Control must require secure elevation behavior (Admin Approval Mode enforcement) | Medium | Prevents credential leakage and enforces secure interactive privilege elevation. |
-| **WN11-CC-000315** | AlwaysInstallElevated must be disabled for Windows Installer | High | Prevents MSI-based privilege escalation by blocking automatic elevated installations. |
-| **WN11-CC-000350** | WinRM must not allow unencrypted traffic | Medium | Prevents interception and tampering of remote management traffic by enforcing encryption. |
+| WN11-SO-000025 | The built-in Guest account must be renamed | CAT II (Medium) | Prevents attackers from targeting a well-known default account for enumeration and brute-force attacks. |
+| WN11-CC-000030 | Windows 11 systems must use BitLocker to encrypt all disks | CAT I (High) | Protects data at rest from offline attacks and credential extraction. |
+| WN11-CC-000050 | Hardened UNC paths must be defined for SYSVOL and NETLOGON | CAT II (Medium) | Ensures SMB domain traffic uses mutual authentication and integrity protection. |
+| WN11-SO-000070 | Only authorized administrators must have local Administrator rights | CAT I (High) | Prevents privilege escalation by restricting local admin group membership. |
+| WN11-CC-000090 | Group Policy objects must be reprocessed even if not changed | CAT II (Medium) | Ensures consistent policy enforcement and prevents configuration drift. |
+| WN11-CC-000185 | The default AutoRun behavior must be configured to prevent AutoRun commands | CAT II (Medium) | Prevents automatic execution of malicious code from removable media. |
+| WN11-CC-000200 | Administrator accounts must not be enumerated during elevation (UAC control) | CAT II (Medium) | Reduces exposure of privileged account information during logon elevation prompts. |
+| WN11-SO-000270 | User Account Control must run all administrators in Admin Approval Mode | CAT I (High) | Prevents silent privilege escalation and enforces secure elevation behavior. |
+| WN11-CC-000315 | Windows Installer “AlwaysInstallElevated” must be disabled | CAT I (High) | Prevents MSI-based privilege escalation to SYSTEM. |
+| WN11-CC-000350 | WinRM must not allow unencrypted traffic | CAT II (Medium) | Prevents interception and tampering of remote management sessions. |
 
 
 
