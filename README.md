@@ -82,7 +82,7 @@ The following workflow outlines the process of deploying the environment, identi
 ---
 ## 📊 Baseline Scan Results
 
-<img width="1377" height="777" alt="image" src="https://github.com/user-attachments/assets/a973bad9-288f-46f1-b2b3-70c3b5f9edbe" />
+<img width="1852" height="797" alt="image" src="https://github.com/user-attachments/assets/a3176dbc-4671-46ff-9574-8adbe3e28cb1" />
 
 
 ---
@@ -92,13 +92,15 @@ The following STIG controls were selected for automated remediation and complian
 
 | STIG ID | Title | Severity | Security Context & Justification |
 | :--- | :--- | :--- | :--- |
+| **WN11-SO-000025** | Account lockout threshold must be configured | High | Mitigates brute-force password attacks targeting local accounts. |
 | **WN11-CC-000030** | LAN Manager hash storage must be disabled | High | Prevents insecure legacy password hashes from being stored, reducing offline credential cracking risks. |
 | **WN11-CC-000050** | Anonymous SID enumeration must be restricted | High | Limits attacker reconnaissance techniques used to enumerate users and security identifiers. |
+| **WN11-SO-000070** | Interactive logon message title must be configured | Low | Supports enterprise security notification and compliance policy requirements. |
 | **WN11-CC-000090** | Solicited Remote Assistance must be disabled | Medium | Reduces unauthorized remote assistance access and remote exploitation opportunities. |
-| **WN11-CC-000140** | Autoplay must be disabled for removable media | Medium | Helps prevent automatic malware execution from USB devices and external media. |
 | **WN11-CC-000185** | Local accounts with blank passwords must be restricted | High | Prevents weak local authentication configurations vulnerable to unauthorized access. |
 | **WN11-CC-000200** | Windows Defender SmartScreen must be enabled | High | Protects against phishing attacks, malicious downloads, and untrusted application execution. |
-| **WN11-CC-000315** | PowerShell Module Logging must be enabled | High | Enhances visibility into PowerShell execution activity for threat detection and forensic analysis. |
-| **WN11-SO-000025** | Account lockout threshold must be configured | High | Mitigates brute-force password attacks targeting local accounts. |
-| **WN11-SO-000070** | Interactive logon message title must be configured | Low | Supports enterprise security notification and compliance policy requirements. |
-| **WN11-SO-000095** | NTLM traffic must be restricted | High | Reduces reliance on insecure legacy authentication protocols susceptible to relay attacks. |
+| **WN11-SO-000270** | RDP client must not save passwords | Medium | Stops attackers from harvesting stored RDP credentials after breaching a machine. |
+| **WN11-CC-000350** | WinRM service must not allow unencrypted traffic | Medium | Blocks attackers from intercepting or tampering with WinRM remote management sessions. |
+| **WN11-CC-000315** | PowerShell Module Logging must be enabled | High | Enhances visibility into PowerShell execution activity for threat detection and forensic analysis. 
+
+
