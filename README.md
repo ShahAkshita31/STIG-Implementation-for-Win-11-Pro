@@ -100,7 +100,8 @@ The following STIG controls were selected for automated remediation and complian
 | **WN11-CC-000185** | Local accounts with blank passwords must be restricted | High | Prevents weak local authentication configurations vulnerable to unauthorized access. |
 | **WN11-CC-000200** | Windows Defender SmartScreen must be enabled | High | Protects against phishing attacks, malicious downloads, and untrusted application execution. |
 | **WN11-SO-000270** | RDP client must not save passwords | Medium | Stops attackers from harvesting stored RDP credentials after breaching a machine. |
+| **WN11-CC-000315** | PowerShell Module Logging must be enabled | High | Enhances visibility into PowerShell execution activity for threat detection and forensic analysis. |
 | **WN11-CC-000350** | WinRM service must not allow unencrypted traffic | Medium | Blocks attackers from intercepting or tampering with WinRM remote management sessions. |
-| **WN11-CC-000315** | PowerShell Module Logging must be enabled | High | Enhances visibility into PowerShell execution activity for threat detection and forensic analysis. 
+
 
 
