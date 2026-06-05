@@ -1,23 +1,23 @@
-# STIG ID: WN11-CC-000030
+# STIG ID: WN11-CC-000038
 
 ## 🛡️ Vulnerability Description
-**Windows 11 systems must use BitLocker to encrypt all disks**
+**Windows 11 systems must have WDigest Authentication disabled.**
 
-The Windows Remote Management (WinRM) client is configured to allow Basic authentication. Basic authentication transmits credentials in a weak format that can be easily decoded if intercepted, especially if encryption is misconfigured or bypassed.
+When enabled, WDigest stores user credentials in plaintext within the Local Security Authority Subsystem Service (LSASS) process, increasing the risk of credential theft and unauthorized access.
 
 ---
 
 ## ⚠️ Security Impact
 
-An attacker capable of intercepting network traffic or gaining access to configuration settings could capture credentials and use them for unauthorized access or lateral movement within the environment.
+An attacker with access to system memory could extract plaintext credentials from LSASS and use them for privilege escalation, lateral movement, or unauthorized access to resources.
 
 ---
 
 ## ⚙️ Remediation Strategy
 
-1. Registry Path Targeted: `HKLM\SYSTEM\CurrentControlSet\Control\SecurityProviders\WDigest`
-2. Control Enforcement: Disable WDigest Authentication to prevent plaintext credentials from being stored in LSASS memory.
-3. Modification: Used a PowerShell script to create/update the UseLogonCredential registry value and set it to `0` (DWORD).
+1. Registry Path Targeted: `HKLM:\SYSTEM\CurrentControlSet\Control\SecurityProviders\Wdigest`
+2. Configuration Enforcement: Set UseLogonCredential (DWORD) value to `0`
+3. Outcome: Prevents plaintext credentials from being stored in LSASS, reducing the risk of credential theft and unauthorized access.
 
 [Remediation Script](https://github.com/ShahAkshita31/STIG-Implementation-for-Win-11-Pro/blob/main/WN11-CC-000038/WN11-CC-000038-remediation.ps1)
 
