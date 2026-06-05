@@ -1,7 +1,7 @@
 # STIG ID: WN11-CC-000350
 
 ## 🛡️ Vulnerability Description
-**	WinRM must not allow unencrypted traffic**
+**WinRM must not allow unencrypted traffic**
 
 Windows 11 systems must not allow unencrypted Windows Remote Management (WinRM) traffic. Allowing unencrypted WinRM communications can expose sensitive information transmitted during remote management sessions, increasing the risk of interception and unauthorized access.
 
