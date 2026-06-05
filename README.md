@@ -93,7 +93,7 @@ The following STIG controls were selected for automated remediation and complian
 | STIG ID | Title | Severity | Security Context & Justification |
 | :------ | :--- | :--- | :--- |
 | WN11-SO-000025 | The built-in Guest account must be renamed | CAT II (Medium) | Prevents attackers from targeting a well-known default account for enumeration and brute-force attacks. |
-| WN11-CC-000030 | Disable ICMP Redirects from Overriding OSPF Routes | CAT III (Low) |Disabling ICMP redirects prevents unauthorized route modifications and ensures network traffic follows trusted OSPF-generated routes, reducing the risk of traffic misrouting and network manipulation. |
+| WN11-CC-000030 | Disable ICMP Redirects from Overriding OSPF Routes | CAT III (Low) |Prevents traffic misrouting by ensuring network traffic follows trusted OSPF routes. |
 | WN11-CC-000038 | WDigest Authentication must be disabled | CAT I (High) | Prevents plaintext credentials from being stored in LSASS, directly mitigating credential dumping risks. |
 | WN11-CC-000050 | Hardened UNC paths must be defined for SYSVOL and NETLOGON | CAT II (Medium) | Ensures SMB domain traffic uses mutual authentication and integrity protection. |
 | WN11-CC-000185 | The default AutoRun behavior must be configured to prevent AutoRun commands | CAT I (High) | Prevents automatic execution of malicious code from removable media. |
