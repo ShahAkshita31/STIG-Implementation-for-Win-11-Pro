@@ -19,7 +19,7 @@ An attacker capable of intercepting network traffic or gaining access to configu
 2. Configuration Enforcement: Set AllowBasic DWORD value to `0`
 3. Outcome: Ensures WinRM client does not use Basic authentication for remote sessions
 
-[Link to Remediation Script](https://github.com/ShahAkshita31/STIG-Implementation-for-Win-11-Pro/blob/main/WN11-CC-000030/WN11-CC-000030-remediation.ps1)
+[Remediation Script](https://github.com/ShahAkshita31/STIG-Implementation-for-Win-11-Pro/blob/main/WN11-CC-000030/WN11-CC-000030-remediation.ps1)
 
 ---
 
