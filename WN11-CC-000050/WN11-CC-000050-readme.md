@@ -17,11 +17,9 @@ An attacker could intercept or spoof connections to SYSVOL and NETLOGON shares, 
 ## ⚙️ Remediation Strategy
 
 1. Registry Path Targeted: `HKLM:\SOFTWARE\Policies\Microsoft\Windows\NetworkProvider\HardenedPaths`
-
 2. Configuration Enforcement:
 `\\*\NETLOGON = RequireMutualAuthentication=1, RequireIntegrity=1`
 `\\*\SYSVOL = RequireMutualAuthentication=1, RequireIntegrity=1`
-
 3. Outcome: Enforces mutual authentication and integrity protection for critical domain shares, helping prevent spoofing and tampering of network communications.
 [Remediation Script](https://github.com/ShahAkshita31/STIG-Implementation-for-Win-11-Pro/blob/main/WN11-CC-000050/WN11-CC-000050-remediation.ps1)
 
