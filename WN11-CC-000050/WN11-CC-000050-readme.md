@@ -1,5 +1,5 @@
 
-# STIG ID: WN11-CC-000038
+# STIG ID: WN11-CC-000050
 
 ## 🛡️ Vulnerability Description
 **Hardened UNC paths must be defined for SYSVOL and NETLOGON**
