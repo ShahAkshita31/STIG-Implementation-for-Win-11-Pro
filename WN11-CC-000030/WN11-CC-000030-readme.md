@@ -7,7 +7,7 @@ The Windows Remote Management (WinRM) client is configured to allow Basic authen
 
 ---
 
-⚠️ Security Impact
+## ⚠️ Security Impact
 
 An attacker capable of intercepting network traffic or gaining access to configuration settings could capture credentials and use them for unauthorized access or lateral movement within the environment.
 
