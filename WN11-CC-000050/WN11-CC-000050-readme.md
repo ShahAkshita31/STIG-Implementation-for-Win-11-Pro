@@ -1,7 +1,7 @@
 # STIG ID: WN11-CC-000050
 
 ## 🛡️ Vulnerability Description
-*Hardened UNC paths must be defined for SYSVOL and NETLOGON**
+*Hardened UNC paths must be defined for SYSVOL and NETLOGON*
 
 The system is not configured to enforce Hardened UNC Paths for the SYSVOL and NETLOGON shares. Without mutual authentication and integrity protection, network communications to these critical domain resources may be vulnerable to spoofing, tampering, or man-in-the-middle attacks, potentially compromising Active Directory operations and Group Policy distribution.
 ---
